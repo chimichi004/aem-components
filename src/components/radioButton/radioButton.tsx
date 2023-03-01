@@ -1,20 +1,19 @@
 import React, {useState} from 'react';
-import {Typography} from '@mui/material';
-import InfoIcon from '@mui/icons-material/Info';
-import { CustomBox as Box, CustomRadio as Radio } from './radioButton.styles';
+
+
+import { CustomRadio as Radio, RadioButtonDiv } from './radioButton.styles';
+import { RadioButtonBox } from './radioButtonBox';
 
 export const RadioButton = () => {
     const [titlePrimary, setTitlePrimary] = useState<string>('Ready-made');
-    const [textDescription, setTextDescription] = useState<string>('professionally constructed multi-sector investment options')
+    const [textDescription, setTextDescription] = useState<string>('professionally constructed multi-sector investment options');
+    const [name, setName] = useState<string>('investmentStrategy');
+    const [value, setValue] = useState<string>('tailormade');
     return (
-        <Box>
-            <Radio />
-            <Typography variant="body2" align="center" color='#164a9a'>
-                {titlePrimary} <InfoIcon color="primary" />
-            </Typography>
-            <Typography variant="body2" color="text.h1" align="center">
-                {textDescription}
-            </Typography>
-        </Box>
+        <RadioButtonDiv>
+             <Radio name={name} value={value}/>
+             <RadioButtonBox textDescription={textDescription} titlePrimary={titlePrimary}/>
+        </RadioButtonDiv>
+       
       );
 }
