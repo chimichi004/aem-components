@@ -3,10 +3,10 @@ import { CustomBox as Box, RadioIconDiv, CustomImage, Secondary, TextDescription
 import InfoIcon from '@mui/icons-material/Info';
 
 
-export const RadioButtonBox = ({titlePrimary, textDescription}:any) =>{
-    return  <Box>
+export const RadioButtonBox = ({titlePrimary, textDescription, sourceImg, altImg, ontoggle}:any) =>{
+    return  <Box  onClick={ontoggle}>
             <RadioIconDiv>
-                <CustomImage src={`https://robohash.org/1?set=set2`} alt="sample-image"/>
+                <CustomImage src={sourceImg} alt={altImg}/>
             </RadioIconDiv>
             <Secondary variant="h5" align="center" color='#164a9a'>
                 {titlePrimary} <InfoIcon sx={{ color:"#164a9a", marginLeft: '5px'}}  />
